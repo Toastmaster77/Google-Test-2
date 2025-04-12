@@ -92,11 +92,11 @@
             pointer-events: none;
             padding: 60px; /* Erhöhter Abstand vom Rand */
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Gleichmäßige Spalten */
-            grid-template-rows: repeat(auto-fit, minmax(80px, 1fr)); /* Gleichmäßige Reihen */
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Kleinere Zellen */
+            grid-template-rows: repeat(auto-fit, minmax(60px, 1fr)); /* Kleinere Zellen */
             justify-items: center; /* Zentriert die Icons in ihren Zellen */
             align-items: center; /* Zentriert die Icons in ihren Zellen */
-            gap: 20px; /* Abstand zwischen den Icons */
+            gap: 15px; /* Kleinerer Abstand zwischen den Icons */
         }
 
         .social-icon-link {
@@ -109,8 +109,8 @@
         }
 
         .social-icon {
-            max-width: 60%; /* Angepasste Größe */
-            max-height: 60%; /* Angepasste Größe */
+            max-width: 40%; /* Kleinere Icons */
+            max-height: 40%; /* Kleinere Icons */
             opacity: 0.6;
             transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
             transform: scale(1);
@@ -154,14 +154,14 @@
 
             .social-icons-container {
                 padding: 80px; /* Mehr Abstand auf größeren Bildschirmen */
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Größere Zellen auf Desktop */
-                grid-template-rows: repeat(auto-fit, minmax(100px, 1fr)); /* Größere Zellen auf Desktop */
-                gap: 30px; /* Mehr Abstand auf größeren Bildschirmen */
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Etwas größere Zellen auf Desktop */
+                grid-template-rows: repeat(auto-fit, minmax(80px, 1fr)); /* Etwas größere Zellen auf Desktop */
+                gap: 20px; /* Kleinerer Abstand auf größeren Bildschirmen */
             }
 
             .social-icon {
-                max-width: 50%; /* Angepasste Größe auf Desktop */
-                max-height: 50%; /* Angepasste Größe auf Desktop */
+                max-width: 30%; /* Kleinere Icons auf Desktop */
+                max-height: 30%; /* Kleinere Icons auf Desktop */
             }
         }
     </style>
