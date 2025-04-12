@@ -161,14 +161,20 @@
                 height: 24px;
             }
 
-            /* Weitere Anpassungen der Icon-Positionierung für sehr kleine Bildschirme */
-          .facebook { top: 20px; left: 20px; }
-            .twitter { top: 20px; right: 20px; }
-            .instagram { bottom: 20px; left: 20px; }
-            .linkedin { bottom: 20px; right: 20px; }
-            .youtube { top: 50%; left: 50%; transform: translate(-50%, -50%); /* Zentriert */ }
-            .pinterest { top: 50px; left: 50%; transform: translateX(-50%); }
-            .tiktok { bottom: 50px; right: 50%; transform: translateX(50%); }
+         /* Angepasste Positionierung für Mobilgeräte - DIES MUSS VERFEINERT WERDEN */
+        @media (max-width: 768px) {
+            .facebook { top: 22px; left: 22px; } /* 20px * 1.1 */
+            .twitter { top: 22px; right: 22px; } /* 20px * 1.1 */
+            .instagram { bottom: 22px; left: 22px; } /* 20px * 1.1 */
+            .linkedin { bottom: 22px; right: 22px; } /* 20px * 1.1 */
+            .youtube { top: 55%; left: 55%; transform: translate(-55%, -55%); /* Anpassung für zentriertes Element */ }
+            .pinterest { top: 55px; left: 55%; transform: translateX(-55%); } /* 50px * 1.1 */
+            .tiktok { bottom: 55px; right: 55%; transform: translateX(55%); } /* 50px * 1.1 */
+
+            .social-icon {
+                width: 35.2px; /* 32px * 1.1 */
+                height: 35.2px; /* 32px * 1.1 */
+            }
         }
     </style>
 </head>
