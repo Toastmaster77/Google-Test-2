@@ -91,30 +91,34 @@
         }
 
         .social-icons-container {
-            position: fixed; /* Icons bleiben beim Scrollen sichtbar (optional) */
-            bottom: 20px; /* Abstand vom unteren Rand */
+            position: absolute; /* Zurück zur absoluten Positionierung für Mobilgeräte */
+            top: 0;
             left: 0;
             width: 100%;
+            height: 100%;
             pointer-events: none;
-            padding: 0 20px; /* Horizontales Padding */
-            display: flex;
-            justify-content: space-around; /* Verteilt die Icons gleichmäßig */
-            align-items: center;
-            box-sizing: border-box; /* Stellt sicher, dass Padding nicht zur Breite beiträgt */
+            padding: 20px; /* Etwas Abstand vom Rand */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Flexible Spalten */
+            grid-template-rows: repeat(auto-fit, minmax(60px, 1fr)); /* Flexible Zeilen */
+            justify-items: center; /* Zentriert Icons in ihren Zellen */
+            align-items: center; /* Zentriert Icons in ihren Zellen */
+            gap: 20px; /* Abstand zwischen den Icons */
+            box-sizing: border-box;
         }
 
         .social-icon-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px; /* Feste Größe für Icons */
-            height: 40px;
+            width: 100%;
+            height: 100%;
             pointer-events: auto;
         }
 
         .social-icon {
-            max-width: 100%; /* Icons nehmen maximal den Platz des Links ein */
-            max-height: 100%;
+            max-width: 60%; /* Anpassbare Icon-Größe */
+            max-height: 60%; /* Anpassbare Icon-Größe */
             opacity: 0.6;
             transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
             transform: scale(1);
@@ -122,7 +126,7 @@
 
         .social-icon:hover {
             opacity: 0.9;
-            transform: scale(1.1); /* Etwas größere Vergrößerung beim Hover */
+            transform: scale(1.1);
         }
 
         /* Media Query für größere Bildschirme (z.B. Tablets und Desktops) */
