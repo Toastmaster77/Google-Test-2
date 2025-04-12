@@ -20,6 +20,9 @@
             text-align: center;
             margin-top: 180px;
             margin-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Zentriert die Inhalte im Google-Container */
         }
 
         .google-logo {
@@ -133,7 +136,9 @@
         }
 
         .instagram-link {
-            transform: translateY(220px); /* Deutlich weiter nach unten verschieben */
+            transform: translateY(220px) translateX(0) !important; /* Nach unten und horizontal zentriert */
+            grid-column: 1 / -1 !important; /* Über die gesamte Breite des Grids */
+            justify-self: center !important; /* Horizontale Zentrierung innerhalb der Zelle */
         }
 
         .youtube-link {
@@ -204,7 +209,9 @@
             }
 
             .instagram-link {
-                transform: translateY(230px); /* Deutlich weiter nach unten verschieben auf Desktop */
+                transform: translateY(230px) translateX(0) !important; /* Nach unten und horizontal zentriert */
+                grid-column: 1 / -1 !important; /* Über die gesamte Breite des Grids */
+                justify-self: center !important; /* Horizontale Zentrierung innerhalb der Zelle */
             }
 
             .youtube-link {
