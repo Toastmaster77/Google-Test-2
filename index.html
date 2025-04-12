@@ -142,6 +142,11 @@
             align-self: start; /* An den oberen Rand der Zelle */
         }
 
+        /* Spezifische Styles für das YouTube-Icon */
+        .youtube-link .social-icon {
+            transform: scale(1.14); /* 14% größer */
+        }
+
         /* Media Query für größere Bildschirme */
         @media (min-width: 769px) {
             .google-container {
@@ -203,6 +208,11 @@
                 justify-self: end; /* An den rechten Rand der Zelle */
                 align-self: start; /* An den oberen Rand der Zelle */
             }
+
+            /* Spezifische Styles für das YouTube-Icon auf Desktop */
+            .youtube-link .social-icon {
+                transform: scale(1.14); /* 14% größer */
+            }
         }
     </style>
 </head>
@@ -226,8 +236,8 @@
         <a href="https://www.instagram.com/" target="_blank" class="social-icon-link instagram-link"><img src="Instagram_icon.png" alt="Instagram" class="social-icon"></a>
         <a href="https://www.linkedin.com/" target="_blank" class="social-icon-link"><img src="linkedIn_logo_initials.png" alt="LinkedIn" class="social-icon"></a>
         <a href="https://www.youtube.com/" target="_blank" class="social-icon-link youtube-link"><img src="youtube.png" alt="YouTube" class="social-icon"></a>
-        <a href="https://www.pinterest.com/" target="_blank" class="social-icon-link"><img src="pinterest.png" alt="Pinterest" class="social-icon"></a>
-        <a href="https://www.tiktok.com/" target="_blank" class="social-icon-link"><img src="tiktok-icon.png" alt="TikTok" class="social-icon"></a>
+        <a href="https://www.pinterest.com/" target="_blank" class="social-icon-link pinterest-link"><img src="pinterest.png" alt="Pinterest" class="social-icon"></a>
+        <a href="https://www.tiktok.com/" target="_blank" class="social-icon-link tiktok-link"><img src="tiktok-icon.png" alt="TikTok" class="social-icon"></a>
     </div>
 </body>
 </html>
