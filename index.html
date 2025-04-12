@@ -13,27 +13,20 @@
             align-items: center;
             min-height: 100vh;
             background-color: #f2f2f2;
-            position: relative; /* Für eventuelle Overlays oder Footer */
+            position: relative;
         }
 
         .google-container {
             text-align: center;
-            margin-top: 150px;
-            margin-bottom: 80px;
-        }
-
-        .logo-container { /* Neuer Container für Google und McDonald's Logo */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px; /* Abstand zur Suchleiste */
+            margin-top: 180px; /* Angepasster Abstand */
+            margin-bottom: 100px; /* Mehr Abstand zu den Icons */
         }
 
         .google-logo {
-            font-size: 4em;
+            font-size: 4.5em; /* Etwas größer */
             color: #4285f4;
             font-weight: bold;
-            margin-right: 20px; /* Abstand zum McDonald's Logo */
+            margin-bottom: 25px;
         }
 
         .google-logo span:nth-child(2) { color: #ea4335; }
@@ -42,18 +35,14 @@
         .google-logo span:nth-child(5) { color: #34a853; }
         .google-logo span:nth-child(6) { color: #ea4335; }
 
-        .mcdonalds-logo {
-            height: 3em; /* Anpassung der Größe relativ zum Google Logo */
-        }
-
         .search-bar {
             display: flex;
             border: 1px solid #ccc;
             border-radius: 25px;
-            padding: 12px 20px;
+            padding: 14px 20px;
             width: 85%;
-            max-width: 500px;
-            margin-bottom: 30px;
+            max-width: 550px;
+            margin-bottom: 35px;
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
             background-color: white;
         }
@@ -86,14 +75,14 @@
 
         .social-icons-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-            grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
-            padding: 30px;
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); /* Etwas größere Zellen */
+            grid-template-rows: repeat(auto-fit, minmax(70px, 1fr));
+            padding: 40px; /* Mehr Abstand zum Rand */
+            gap: 25px; /* Mehr Abstand zwischen den Icons */
             justify-content: center;
             align-items: center;
-            width: 90%;
-            max-width: 800px;
+            width: 95%; /* Nimmt fast die volle Breite ein */
+            max-width: 900px; /* Maximale Breite des Icon-Bereichs */
             margin: 0 auto;
         }
 
@@ -107,24 +96,64 @@
         }
 
         .social-icon {
-            max-width: 70%;
-            max-height: 70%;
-            opacity: 0.7;
-            transition: opacity 0.3s ease-in-out;
+            max-width: 80%; /* Größere Icons */
+            max-height: 80%;
+            opacity: 0.8; /* Etwas weniger transparent */
+            transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out; /* Sanfter Hover-Effekt */
+            transform: scale(1);
         }
 
         .social-icon:hover {
             opacity: 1;
+            transform: scale(1.1); /* Leichter Zoom-Effekt beim Hovern */
+        }
+
+        /* Media Query für größere Bildschirme */
+        @media (min-width: 769px) {
+            .google-container {
+                margin-top: 220px;
+                margin-bottom: 120px;
+            }
+
+            .google-logo {
+                font-size: 5.5em;
+                margin-bottom: 30px;
+            }
+
+            .search-bar {
+                max-width: 750px;
+                padding: 16px 25px;
+                margin-bottom: 40px;
+            }
+
+            .search-buttons {
+                gap: 20px;
+            }
+
+            .search-buttons button {
+                font-size: 18px;
+                padding: 15px 30px;
+            }
+
+            .social-icons-container {
+                grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Noch größere Zellen */
+                grid-template-rows: repeat(auto-fit, minmax(90px, 1fr));
+                padding: 50px;
+                gap: 30px;
+                max-width: 1100px;
+            }
+
+            .social-icon {
+                max-width: 90%; /* Noch größere Icons */
+                max-height: 90%;
+            }
         }
     </style>
 </head>
 <body>
     <div class="google-container">
-        <div class="logo-container">
-            <div class="google-logo">
-                <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
-            </div>
-            <img src="mcdonalds.png" alt="McDonald's" class="mcdonalds">
+        <div class="google-logo">
+            <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
         </div>
         <div class="search-bar">
             <input type="text">
@@ -141,7 +170,7 @@
         <a href="https://www.instagram.com/" target="_blank" class="social-icon-link"><img src="Instagram_icon.png" alt="Instagram" class="social-icon"></a>
         <a href="https://www.linkedin.com/" target="_blank" class="social-icon-link"><img src="linkedIn_logo_initials.png" alt="LinkedIn" class="social-icon"></a>
         <a href="https://www.youtube.com/" target="_blank" class="social-icon-link"><img src="youtube.png" alt="YouTube" class="social-icon"></a>
-        <a href="https://www.pinterest.com/" target="_blank" class="social-icon-link"><img src="pnterest.png" alt="Pinterest" class="social-icon"></a>
+        <a href="https://www.pinterest.com/" target="_blank" class="social-icon-link"><img src="pinterest.png" alt="Pinterest" class="social-icon"></a>
         <a href="https://www.tiktok.com/" target="_blank" class="social-icon-link"><img src="tiktok-icon.png" alt="TikTok" class="social-icon"></a>
     </div>
 </body>
