@@ -22,11 +22,18 @@
             margin-bottom: 80px; /* Mehr Abstand zu den Icons */
         }
 
+        .logo-container { /* Neuer Container für Google und McDonald's Logo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px; /* Abstand zur Suchleiste */
+        }
+
         .google-logo {
             font-size: 4em;
             color: #4285f4;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-right: 20px; /* Abstand zum McDonald's Logo */
         }
 
         .google-logo span:nth-child(2) { color: #ea4335; }
@@ -34,6 +41,10 @@
         .google-logo span:nth-child(4) { color: #4285f4; }
         .google-logo span:nth-child(5) { color: #34a853; }
         .google-logo span:nth-child(6) { color: #ea4335; }
+
+        .mcdonalds-logo {
+            height: 3em; /* Anpassung der Größe relativ zum Google Logo */
+        }
 
         .search-bar {
             display: flex;
@@ -115,7 +126,11 @@
 
             .google-logo {
                 font-size: 6em;
-                margin-bottom: 30px;
+                margin-right: 30px;
+            }
+
+            .mcdonalds-logo {
+                height: 4em;
             }
 
             .search-bar {
@@ -150,8 +165,11 @@
 </head>
 <body>
     <div class="google-container">
-        <div class="google-logo">
-            <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+        <div class="logo-container">
+            <div class="google-logo">
+                <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+            </div>
+            <img src="mcdonalds.png" alt="McDonald's" class="mcdonalds-logo">
         </div>
         <div class="search-bar">
             <input type="text">
