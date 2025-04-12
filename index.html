@@ -27,7 +27,7 @@
         }
 
         .google-logo {
-            font-size: 4.5em; /* Etwas größer */
+            font-size: 4.5em;
             color: #4285f4;
             font-weight: bold;
             margin-bottom: 20px;
@@ -106,12 +106,12 @@
             max-height: 100%;
             opacity: 0.7;
             transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
-            transform: scale(0.8); /* Noch etwas kleiner */
+            transform: scale(0.8); /* Basisgröße bleibt */
         }
 
         .social-icon:hover {
             opacity: 1;
-            transform: scale(0.88); /* Kleinerer Zoom beim Hovern */
+            transform: scale(0.88);
         }
 
         /* Angepasste Größen und Positionen der Icons */
@@ -124,14 +124,17 @@
         .tiktok { grid-column: 3; grid-row: 2; }
 
         .youtube .social-icon {
-            transform: scale(1.1 * 0.8); /* War 1.1, jetzt noch kleiner */
+            transform: scale(1.1 * 0.8);
         }
 
-        .facebook .social-icon,
         .twitter .social-icon,
         .pinterest .social-icon,
         .instagram .social-icon {
-            transform: scale(0.8 * 0.8); /* Waren 0.8, jetzt noch kleiner */
+            transform: scale(0.8 * 0.8);
+        }
+
+        .facebook .social-icon {
+            transform: scale(0.7 * 0.8); /* Noch kleiner für Facebook */
         }
 
         /* Media Query für größere Bildschirme */
@@ -145,7 +148,7 @@
             }
 
             .google-logo {
-                font-size: 5.5em; /* Etwas größer auf Desktop */
+                font-size: 5.5em;
                 margin-bottom: 30px;
             }
 
@@ -167,15 +170,18 @@
             .youtube { grid-column: 3; grid-row: 1; }
             .tiktok { grid-column: 4; grid-row: 3; }
 
-            .facebook .social-icon,
             .twitter .social-icon,
             .pinterest .social-icon,
             .instagram .social-icon {
-                transform: scale(0.7 * 0.8); /* Waren 0.7, jetzt noch kleiner */
+                transform: scale(0.7 * 0.8);
+            }
+
+            .facebook .social-icon {
+                transform: scale(0.6 * 0.8); /* Noch kleiner für Facebook auf Desktop */
             }
 
             .youtube .social-icon {
-                transform: scale(1.4 * 0.8); /* Waren 1.4, jetzt noch kleiner */
+                transform: scale(1.4 * 0.8);
             }
 
             .social-icon-link {
