@@ -18,8 +18,8 @@
 
         .google-container {
             text-align: center;
-            margin-top: 200px; /* Weiter nach unten verschoben */
-            margin-bottom: 80px; /* Mehr Abstand zu den Icons */
+            margin-top: 150px;
+            margin-bottom: 80px;
         }
 
         .logo-container { /* Neuer Container für Google und McDonald's Logo */
@@ -86,28 +86,28 @@
 
         .social-icons-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Größere Zellen */
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
             grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
             padding: 30px;
-            gap: 20px; /* Abstand zwischen den Icons */
-            justify-content: center; /* Zentriert die Icon-Gruppe horizontal */
-            align-items: center; /* Zentriert die Icons vertikal in ihren Zellen */
-            width: 90%; /* Nimmt mehr Breite ein */
-            max-width: 800px; /* Maximale Breite des Icon-Bereichs */
-            margin: 0 auto; /* Zentriert den Icon-Bereich */
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .social-icon-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%; /* Nimmt die volle Breite der Zelle ein */
-            height: 100%; /* Nimmt die volle Höhe der Zelle ein */
+            width: 100%;
+            height: 100%;
             pointer-events: auto;
         }
 
         .social-icon {
-            max-width: 70%; /* Größere Icons innerhalb der Zelle */
+            max-width: 70%;
             max-height: 70%;
             opacity: 0.7;
             transition: opacity 0.3s ease-in-out;
@@ -115,51 +115,6 @@
 
         .social-icon:hover {
             opacity: 1;
-        }
-
-        /* Media Query für größere Bildschirme */
-        @media (min-width: 769px) {
-            .google-container {
-                margin-top: 250px;
-                margin-bottom: 100px;
-            }
-
-            .google-logo {
-                font-size: 6em;
-                margin-right: 30px;
-            }
-
-            .mcdonalds-logo {
-                height: 4em;
-            }
-
-            .search-bar {
-                max-width: 700px;
-                padding: 15px 25px;
-                margin-bottom: 40px;
-            }
-
-            .search-buttons {
-                gap: 20px;
-            }
-
-            .search-buttons button {
-                font-size: 18px;
-                padding: 15px 30px;
-            }
-
-            .social-icons-container {
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Noch größere Zellen */
-                grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
-                padding: 40px;
-                gap: 30px;
-                max-width: 1000px;
-            }
-
-            .social-icon {
-                max-width: 80%;
-                max-height: 80%;
-            }
         }
     </style>
 </head>
@@ -169,7 +124,7 @@
             <div class="google-logo">
                 <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
             </div>
-            <img src="mcdonalds.png" alt="McDonald's" class="mcdonalds-logo">
+            <img src="mcdonalds_logo.png" alt="McDonald's" class="mcdonalds-logo">
         </div>
         <div class="search-bar">
             <input type="text">
@@ -186,7 +141,7 @@
         <a href="https://www.instagram.com/" target="_blank" class="social-icon-link"><img src="Instagram_icon.png" alt="Instagram" class="social-icon"></a>
         <a href="https://www.linkedin.com/" target="_blank" class="social-icon-link"><img src="linkedIn_logo_initials.png" alt="LinkedIn" class="social-icon"></a>
         <a href="https://www.youtube.com/" target="_blank" class="social-icon-link"><img src="youtube.png" alt="YouTube" class="social-icon"></a>
-        <a href="https://www.pinterest.com/" target="_blank" class="social-icon-link"><img src="pinterest.png" alt="Pinterest" class="social-icon"></a>
+        <a href="https://www.pinterest.com/" target="_blank" class="social-icon-link"><img src="pnterest.png" alt="Pinterest" class="social-icon"></a>
         <a href="https://www.tiktok.com/" target="_blank" class="social-icon-link"><img src="tiktok-icon.png" alt="TikTok" class="social-icon"></a>
     </div>
 </body>
