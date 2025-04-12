@@ -18,8 +18,13 @@
 
         .google-container {
             text-align: center;
-            margin-top: 15vh;
-            margin-bottom: auto;
+            /* Exakte Zentrierung der Google Suche */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%; /* Damit es nicht zu breit auf kleinen Bildschirmen ist */
+            max-width: 600px; /* Maximale Breite des Google Bereichs */
         }
 
         .google-logo {
@@ -40,8 +45,7 @@
             border: 1px solid #ccc;
             border-radius: 25px;
             padding: 12px 20px;
-            width: 85%;
-            max-width: 500px;
+            width: 100%;
             margin-bottom: 30px;
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
             background-color: white;
@@ -57,6 +61,7 @@
         .search-buttons {
             display: flex;
             gap: 15px;
+            justify-content: center; /* Zentriert die Buttons */
         }
 
         .search-buttons button {
@@ -102,38 +107,43 @@
             max-height: 100%;
             opacity: 0.7;
             transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
-            transform: scale(1);
+            transform: scale(0.9); /* 10% kleiner */
         }
 
         .social-icon:hover {
             opacity: 1;
-            transform: scale(1.1);
+            transform: scale(0.99); /* Kleinerer Zoom beim Hovern */
         }
 
         /* Angepasste Größen und Positionen der Icons */
         .facebook { grid-column: 1; grid-row: 1; }
         .twitter { grid-column: 3; grid-row: 1; }
-        .pinterest { grid-column: 1; grid-row: 2; /* Nicht so weit oben */ }
+        .pinterest { grid-column: 1; grid-row: 2; }
         .instagram { grid-column: 1; grid-row: 3; }
         .linkedin { grid-column: 3; grid-row: 3; }
-        .youtube { grid-column: 2; grid-row: 1; /* Weiter oben platziert */ }
+        .youtube { grid-column: 2; grid-row: 1; }
         .tiktok { grid-column: 3; grid-row: 2; }
+
+        .youtube .social-icon {
+            transform: scale(1.1 * 0.9); /* War 1.2, jetzt 1.1, dann 10% kleiner */
+        }
 
         .facebook .social-icon,
         .twitter .social-icon,
         .pinterest .social-icon,
         .instagram .social-icon {
-            transform: scale(0.8); /* Kleiner */
-        }
-
-        .youtube .social-icon {
-            transform: scale(1.2); /* Größer */
+            transform: scale(0.8 * 0.9); /* Waren 0.8, jetzt 10% kleiner */
         }
 
         /* Media Query für größere Bildschirme */
         @media (min-width: 769px) {
             .google-container {
-                margin-top: 10vh;
+                /* Exakte Zentrierung der Google Suche auf größeren Bildschirmen */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-width: 700px;
             }
 
             .google-logo {
@@ -142,7 +152,7 @@
             }
 
             .search-bar {
-                max-width: 600px;
+                max-width: 100%;
             }
 
             .social-icons-container {
@@ -153,21 +163,21 @@
             /* Angepasste Größen und Positionen für größere Bildschirme */
             .facebook { grid-column: 1; grid-row: 1; }
             .twitter { grid-column: 5; grid-row: 1; }
-            .pinterest { grid-column: 2; grid-row: 1; /* Nicht so weit oben */ }
+            .pinterest { grid-column: 2; grid-row: 1; }
             .instagram { grid-column: 1; grid-row: 3; }
             .linkedin { grid-column: 5; grid-row: 3; }
-            .youtube { grid-column: 3; grid-row: 1; /* Weiter oben platziert */ }
+            .youtube { grid-column: 3; grid-row: 1; }
             .tiktok { grid-column: 4; grid-row: 3; }
 
             .facebook .social-icon,
             .twitter .social-icon,
             .pinterest .social-icon,
             .instagram .social-icon {
-                transform: scale(0.7); /* Etwas kleiner auf Desktop */
+                transform: scale(0.7 * 0.9); /* Waren 0.7, jetzt 10% kleiner */
             }
 
             .youtube .social-icon {
-                transform: scale(1.4); /* Größer auf Desktop */
+                transform: scale(1.4 * 0.9); /* Waren 1.4, jetzt 10% kleiner */
             }
 
             .social-icon-link {
