@@ -24,6 +24,9 @@
             margin-bottom: 60px;
             width: 90%; /* Passt sich der Bildschirmbreite an */
             max-width: 600px; /* Maximale Breite */
+            display: flex; /* Für die vertikale Anordnung von Logo, Suche und den verschobenen Icons */
+            flex-direction: column;
+            align-items: center;
         }
 
         .google-logo {
@@ -129,8 +132,34 @@
             transform: scale(1.1);
         }
 
+        /* Spezifische Platzierung der verschobenen Icons in der mobilen Ansicht */
+        .twitter-link,
+        .instagram-link,
+        .linkedin-link {
+            /* Direkt unter der Suche platzieren */
+            grid-column: 1 / -1; /* Über die volle Breite */
+        }
+
+        .twitter-link {
+            grid-row: 3; /* Direkt nach der Zeile der Suche (angenommen Logo ist Zeile 1, Suche Zeile 2) */
+        }
+
+        .instagram-link {
+            grid-row: 4;
+        }
+
+        .linkedin-link {
+            grid-row: 5;
+        }
+
         /* Media Query für größere Bildschirme (z.B. Tablets und Desktops) */
         @media (min-width: 769px) {
+            .google-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
             .social-icons-container {
                 position: absolute; /* Zurück zur absoluten Positionierung für Desktop */
                 top: 0;
@@ -178,6 +207,10 @@
                 transform: translateY(220px); /* Deutlich weiter nach unten verschieben */
             }
 
+            .linkedin-link {
+                /* Keine spezifische transform für Desktop, da es im Grid liegt */
+            }
+
             .youtube-link {
                 transform: translateY(-330px); /* Auf gleiche Höhe wie Twitter (Standard) */
                 justify-self: end; /* An den rechten Rand der Zelle */
@@ -207,16 +240,18 @@
             <button>Google Suche</button>
             <button>Auf gut Glück!</button>
         </div>
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <a href="https://twitter.com/" target="_blank" class="social-icon-link twitter-link"><img src="twitter.png" alt="Twitter" class="social-icon"></a>
+            <a href="https://www.instagram.com/" target="_blank" class="social-icon-link instagram-link"><img src="Instagram_icon.png" alt="Instagram" class="social-icon"></a>
+            <a href="https://www.linkedin.com/" target="_blank" class="social-icon-link linkedin-link"><img src="linkedIn_logo_initials.png" alt="LinkedIn" class="social-icon"></a>
+        </div>
     </div>
 
-    <div class="social-icons-container">
+    <div class="social-icons-container" style="pointer-events: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); grid-template-rows: repeat(auto-fit, minmax(60px, 1fr)); justify-items: center; align-items: center; gap: 20px; top: auto; bottom: 20px; left: 20px; right: 20px; width: auto; height: auto;">
         <a href="https://www.facebook.com/" target="_blank" class="social-icon-link facebook-link"><img src="facebook.png" alt="Facebook" class="social-icon"></a>
-        <a href="https://twitter.com/" target="_blank" class="social-icon-link twitter-link"><img src="twitter.png" alt="Twitter" class="social-icon"></a>
-        <a href="https://www.instagram.com/" target="_blank" class="social-icon-link instagram-link"><img src="Instagram_icon.png" alt="Instagram" class="social-icon"></a>
-        <a href="https://www.linkedin.com/" target="_blank" class="social-icon-link"><img src="linkedIn_logo_initials.png" alt="LinkedIn" class="social-icon"></a>
         <a href="https://www.youtube.com/" target="_blank" class="social-icon-link youtube-link"><img src="youtube.png" alt="YouTube" class="social-icon"></a>
         <a href="https://www.pinterest.com/" target="_blank" class="social-icon-link pinterest-link"><img src="pinterest.png" alt="Pinterest" class="social-icon"></a>
         <a href="https://www.tiktok.com/" target="_blank" class="social-icon-link tiktok-link"><img src="tiktok-icon.png" alt="TikTok" class="social-icon"></a>
-    </div>
+        </div>
 </body>
 </html>
