@@ -18,11 +18,12 @@
 
         .google-container {
             text-align: center;
-            margin-top: 150px; /* Weniger Abstand oben auf Mobilgeräten */
+            margin-top: 120px; /* Angepasster Abstand oben */
+            margin-bottom: 60px; /* Etwas Abstand nach unten für die Icons */
         }
 
         .google-logo {
-            font-size: 4em; /* Kleineres Logo auf Mobilgeräten */
+            font-size: 3.5em; /* Angepasste Größe für Mobilgeräte */
             color: #4285f4;
             font-weight: bold;
             margin-bottom: 15px;
@@ -38,10 +39,10 @@
             display: flex;
             border: 1px solid #ccc;
             border-radius: 25px;
-            padding: 8px 15px; /* Kleinere Padding auf Mobilgeräten */
-            width: 90%; /* Mehr Breite auf Mobilgeräten */
-            max-width: 400px; /* Maximale Breite beibehalten */
-            margin-bottom: 20px; /* Weniger Abstand unten */
+            padding: 10px 15px;
+            width: 85%;
+            max-width: 450px;
+            margin-bottom: 25px;
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
             background-color: white;
         }
@@ -53,13 +54,17 @@
             font-size: 16px;
         }
 
+        .search-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
         .search-buttons button {
             background-color: #f8f9fa;
             border: 1px solid #f8f9fa;
             color: #3c4043;
             font-size: 14px;
-            padding: 8px 15px; /* Kleinere Padding auf Mobilgeräten */
-            margin: 5px;
+            padding: 10px 15px;
             border-radius: 4px;
             cursor: pointer;
         }
@@ -69,21 +74,30 @@
         }
 
         .social-icons-container {
-            position: absolute; /* Ermöglicht die Positionierung relativ zum body */
+            position: absolute;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Verhindert, dass der Container Interaktionen blockiert */
+            pointer-events: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Flexibler Spaltenraster */
+            grid-template-rows: repeat(auto-fit, minmax(60px, 1fr)); /* Flexibler Zeilenraster */
+            padding: 20px;
+            align-items: center;
+            justify-items: center;
         }
 
         .social-icon-link {
-            display: inline-block;
-            position: absolute; /* Positionierung der einzelnen Icons */
-            pointer-events: auto; /* Erlaubt Interaktionen mit den Icons */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px; /* Einheitliche Größe für die Link-Container */
+            height: 60px;
+            pointer-events: auto;
         }
 
         .social-icon {
-            width: 36px; /* Kleinere Icons auf Mobilgeräten */
-            height: 36px;
+            max-width: 100%; /* Stellen Sie sicher, dass die Icons nicht größer als ihr Container sind */
+            max-height: 100%;
             opacity: 0.7;
             transition: opacity 0.3s ease-in-out;
         }
@@ -92,93 +106,43 @@
             opacity: 1;
         }
 
-        /* Standard-Positionierung für größere Bildschirme */
-        .facebook { top: 50px; left: 50px; }
-        .twitter { top: 80px; right: 50px; }
-        .instagram { bottom: 100px; left: 150px; }
-        .linkedin { bottom: 50px; right: 100px; }
-        .youtube { top: 150px; right: 200px; }
-        .pinterest { top: 200px; left: 250px; }
-        .tiktok { bottom: 200px; right: 250px; }
-
-        /* Media Query für kleinere Bildschirme (bis 768px Breite - typische Tablet-Größe) */
-        @media (max-width: 768px) {
+        /* Media Query für größere Bildschirme */
+        @media (min-width: 769px) {
             .google-container {
-                margin-top: 60px;
+                margin-top: 180px;
+                margin-bottom: 80px;
             }
 
             .google-logo {
-                font-size: 3em;
-                margin-bottom: 10px;
+                font-size: 5em;
+                margin-bottom: 20px;
             }
 
             .search-bar {
-                width: 95%;
-                padding: 6px 12px;
-                margin-bottom: 15px;
-            }
-
-            .search-buttons button {
-                font-size: 12px;
-                padding: 6px 10px;
-                margin: 3px;
-            }
-
-            .social-icon {
-                width: 28px;
-                height: 28px;
-            }
-
-            /* Angepasste Positionierung für Mobilgeräte - DIES MUSS VERFEINERT WERDEN */
-            .facebook { top: 20px; left: 20px; }
-            .twitter { top: 20px; right: 20px; }
-            .instagram { bottom: 20px; left: 20px; }
-            .linkedin { bottom: 20px; right: 20px; }
-            .youtube { top: 50%; left: 50%; transform: translate(-50%, -50%); /* Zentriert */ }
-            .pinterest { top: 50px; left: 50%; transform: translateX(-50%); }
-            .tiktok { bottom: 50px; right: 50%; transform: translateX(50%); }
-        }
-
-        /* Media Query für noch kleinere Bildschirme (z.B. Smartphones) */
-        @media (max-width: 480px) {
-            .google-logo {
-                font-size: 2.5em;
+                width: 60%;
+                max-width: 600px;
+                padding: 12px 20px;
+                margin-bottom: 30px;
             }
 
             .search-buttons {
-                display: flex;
-                flex-direction: column; /* Buttons untereinander auf kleinen Smartphones */
-                align-items: center;
+                gap: 15px;
             }
 
             .search-buttons button {
-                margin: 5px 0;
-                width: 80%;
+                font-size: 16px;
+                padding: 12px 25px;
             }
 
-            .social-icon {
-                width: 24px;
-                height: 24px;
+            .social-icons-container {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
+                padding: 30px;
             }
 
-        /* Angepasste Positionierung für Mobilgeräte - DIES MUSS VERFEINERT WERDEN */
-        @media (max-width: 768px) {
-            .facebook { top: 22px; left: 22px; }
-            .twitter { top: 22px; right: 22px; }
-            .instagram { bottom: 22px; left: 22px; }
-            .linkedin { bottom: 22px; right: 22px; }
-            .youtube { top: 55%; left: 55%; transform: translate(-55%, -55%); /* Anpassung für zentriertes Element */ }
-            .pinterest { top: 55px; left: 55%; transform: translateX(-55%); }
-            .tiktok { bottom: 70px; right: 70px; } /* Positionierung bleibt vorerst */
-
-            .social-icon {
-                width: 35.2px; /* Standardgröße + 10% */
-                height: 35.2px; /* Standardgröße + 10% */
-            }
-
-            .tiktok .social-icon {
-                width: 52.4px; /* 32px * 1.3 */
-                height: 52.4px; /* 32px * 1.3 */
+            .social-icon-link {
+                width: 80px;
+                height: 80px;
             }
         }
     </style>
@@ -198,13 +162,13 @@
     </div>
 
     <div class="social-icons-container">
-        <a href="https://www.facebook.com/" target="_blank" class="social-icon-link facebook"><img src="facebook.png" alt="Facebook" class="social-icon"></a>
-        <a href="https://twitter.com/" target="_blank" class="social-icon-link twitter"><img src="twitter.png" alt="Twitter" class="social-icon"></a>
-        <a href="https://www.instagram.com/" target="_blank" class="social-icon-link instagram"><img src="Instagram_icon.png" alt="Instagram" class="social-icon"></a>
-        <a href="https://www.linkedin.com/" target="_blank" class="social-icon-link linkedin"><img src="linkedIn_logo_initials.png" alt="LinkedIn" class="social-icon"></a>
-        <a href="https://www.youtube.com/" target="_blank" class="social-icon-link youtube"><img src="youtube.png" alt="YouTube" class="social-icon"></a>
-        <a href="https://www.pinterest.com/" target="_blank" class="social-icon-link pinterest"><img src="pnterest.png" alt="Pinterest" class="social-icon"></a>
-        <a href="https://www.tiktok.com/" target="_blank" class="social-icon-link tiktok"><img src="tiktok-icon.png" alt="TikTok" class="social-icon"></a>
+        <a href="https://www.facebook.com/" target="_blank" class="social-icon-link"><img src="facebook.png" alt="Facebook" class="social-icon"></a>
+        <a href="https://twitter.com/" target="_blank" class="social-icon-link"><img src="twitter.png" alt="Twitter" class="social-icon"></a>
+        <a href="https://www.instagram.com/" target="_blank" class="social-icon-link"><img src="Instagram_icon.png" alt="Instagram" class="social-icon"></a>
+        <a href="https://www.linkedin.com/" target="_blank" class="social-icon-link"><img src="linkedIn_logo_initials.png" alt="LinkedIn" class="social-icon"></a>
+        <a href="https://www.youtube.com/" target="_blank" class="social-icon-link"><img src="youtube.png" alt="YouTube" class="social-icon"></a>
+        <a href="https://www.pinterest.com/" target="_blank" class="social-icon-link"><img src="pinterest.png" alt="Pinterest" class="social-icon"></a>
+        <a href="https://www.tiktok.com/" target="_blank" class="social-icon-link"><img src="tiktok-icon.png" alt="TikTok" class="social-icon"></a>
     </div>
 </body>
 </html>
