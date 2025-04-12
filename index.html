@@ -16,18 +16,18 @@
             position: relative;
         }
 
-        .google-container {
-            text-align: center;
-            margin-top: 180px;
-            margin-bottom: 100px;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px; /* Abstand zur Suchleiste */
         }
 
         .google-logo {
             font-size: 4.2em;
             color: #4285f4;
             font-weight: bold;
-            margin-bottom: 30px;
             letter-spacing: 0.5px;
+            margin-left: 10px; /* Abstand zum McDonald's Logo */
         }
 
         .google-logo span:nth-child(2) { color: #ea4335; }
@@ -35,6 +35,12 @@
         .google-logo span:nth-child(4) { color: #4285f4; }
         .google-logo span:nth-child(5) { color: #34a853; }
         .google-logo span:nth-child(6) { color: #ea4335; }
+
+        .mcdonalds-logo {
+            width: 80px; /* Angepasste Größe */
+            height: auto;
+            margin-right: 20px; /* Abstand zum Google Logo */
+        }
 
         .search-bar {
             display: flex;
@@ -123,14 +129,18 @@
 
         /* Media Query für größere Bildschirme */
         @media (min-width: 769px) {
-            .google-container {
-                margin-top: 200px;
-                margin-bottom: 120px;
+            .logo-container {
+                margin-bottom: 35px;
             }
 
             .google-logo {
                 font-size: 5em;
-                margin-bottom: 35px;
+                margin-left: 15px;
+            }
+
+            .mcdonalds-logo {
+                width: 100px;
+                margin-right: 30px;
             }
 
             .search-bar {
@@ -169,8 +179,11 @@
 </head>
 <body>
     <div class="google-container">
-        <div class="google-logo">
-            <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+        <div class="logo-container">
+            <img src="mcdonalds_logo.png" alt="McDonald's Logo" class="mcdonalds-logo">
+            <div class="google-logo">
+                <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+            </div>
         </div>
         <div class="search-bar">
             <input type="text">
