@@ -18,15 +18,16 @@
 
         .google-container {
             text-align: center;
-            margin-top: 180px; /* Angepasster Abstand */
-            margin-bottom: 100px; /* Mehr Abstand zu den Icons */
+            margin-top: 180px;
+            margin-bottom: 100px;
         }
 
         .google-logo {
-            font-size: 4.5em; /* Etwas größer */
+            font-size: 4.2em; /* Etwas kleiner für mehr Eleganz */
             color: #4285f4;
             font-weight: bold;
-            margin-bottom: 25px;
+            margin-bottom: 30px; /* Mehr Abstand zur Suchleiste */
+            letter-spacing: 0.5px; /* Leichter Buchstabenabstand */
         }
 
         .google-logo span:nth-child(2) { color: #ea4335; }
@@ -37,53 +38,63 @@
 
         .search-bar {
             display: flex;
-            border: 1px solid #ccc;
-            border-radius: 25px;
-            padding: 14px 20px;
+            border: 1px solid #ddd; /* Hellere, dünnere Border */
+            border-radius: 30px; /* Noch runder */
+            padding: 12px 20px; /* Angepasstes Padding */
             width: 85%;
             max-width: 550px;
-            margin-bottom: 35px;
-            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px; /* Mehr Abstand zu den Buttons */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtilere, weichere Shadow */
             background-color: white;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .search-bar:focus-within {
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2); /* Verstärkter Shadow beim Fokus */
         }
 
         .search-bar input[type="text"] {
             flex-grow: 1;
             border: none;
             outline: none;
-            font-size: 18px;
+            font-size: 17px; /* Etwas kleinere Schrift */
+            color: #333; /* Dunklere Textfarbe */
         }
 
         .search-buttons {
             display: flex;
-            gap: 15px;
+            gap: 12px; /* Etwas weniger Abstand */
         }
 
         .search-buttons button {
-            background-color: #f8f9fa;
-            border: 1px solid #f8f9fa;
-            color: #3c4043;
-            font-size: 16px;
-            padding: 12px 25px;
-            border-radius: 4px;
+            background-color: #eee; /* Hellgrauer Hintergrund */
+            border: 1px solid #eee;
+            color: #444; /* Dunkelgraue Textfarbe */
+            font-size: 15px; /* Kleinere Schrift */
+            padding: 10px 20px; /* Angepasstes Padding */
+            border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
         }
 
         .search-buttons button:hover {
-            border-color: #dadce0;
+            background-color: #ddd;
+            border-color: #ddd;
+            color: #222;
         }
 
         .social-icons-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); /* Etwas größere Zellen */
-            grid-template-rows: repeat(auto-fit, minmax(70px, 1fr));
-            padding: 40px; /* Mehr Abstand zum Rand */
-            gap: 25px; /* Mehr Abstand zwischen den Icons */
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Kleinere Zellen */
+            grid-template-rows: repeat(auto-fit, minmax(60px, 1fr));
+            padding: 30px; /* Angepasstes Padding */
+            gap: 20px; /* Angepasster Abstand */
             justify-content: center;
             align-items: center;
-            width: 95%; /* Nimmt fast die volle Breite ein */
-            max-width: 900px; /* Maximale Breite des Icon-Bereichs */
+            width: 95%;
+            max-width: 700px; /* Reduzierte maximale Breite */
             margin: 0 auto;
+            opacity: 0.7; /* Noch etwas weniger auffällig */
         }
 
         .social-icon-link {
@@ -96,56 +107,60 @@
         }
 
         .social-icon {
-            max-width: 80%; /* Größere Icons */
-            max-height: 80%;
-            opacity: 0.8; /* Etwas weniger transparent */
-            transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out; /* Sanfter Hover-Effekt */
+            max-width: 70%; /* Kleinere Icons */
+            max-height: 70%;
+            opacity: 0.5; /* Noch transparenter */
+            transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
             transform: scale(1);
         }
 
         .social-icon:hover {
-            opacity: 1;
-            transform: scale(1.1); /* Leichter Zoom-Effekt beim Hovern */
+            opacity: 0.9;
+            transform: scale(1.05); /* Subtilerer Zoom */
         }
 
         /* Media Query für größere Bildschirme */
         @media (min-width: 769px) {
             .google-container {
-                margin-top: 220px;
+                margin-top: 200px;
                 margin-bottom: 120px;
             }
 
             .google-logo {
-                font-size: 5.5em;
-                margin-bottom: 30px;
+                font-size: 5em;
+                margin-bottom: 35px;
             }
 
             .search-bar {
-                max-width: 750px;
-                padding: 16px 25px;
-                margin-bottom: 40px;
+                max-width: 700px;
+                padding: 14px 25px;
+                margin-bottom: 45px;
+            }
+
+            .search-bar input[type="text"] {
+                font-size: 18px;
             }
 
             .search-buttons {
-                gap: 20px;
+                gap: 15px;
             }
 
             .search-buttons button {
-                font-size: 18px;
-                padding: 15px 30px;
+                font-size: 16px;
+                padding: 12px 22px;
             }
 
             .social-icons-container {
-                grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Noch größere Zellen */
-                grid-template-rows: repeat(auto-fit, minmax(90px, 1fr));
-                padding: 50px;
-                gap: 30px;
-                max-width: 1100px;
+                grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); /* Etwas größere Zellen auf Desktop */
+                grid-template-rows: repeat(auto-fit, minmax(70px, 1fr));
+                padding: 40px;
+                gap: 25px;
+                max-width: 900px;
             }
 
             .social-icon {
-                max-width: 90%; /* Noch größere Icons */
-                max-height: 90%;
+                max-width: 60%; /* Kleinere Icons auf Desktop beibehalten */
+                max-height: 60%;
             }
         }
     </style>
