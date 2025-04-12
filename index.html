@@ -20,6 +20,9 @@
             text-align: center;
             margin-top: 180px;
             margin-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Zentriert die Inhalte im Google-Container */
         }
 
         .google-logo {
@@ -123,32 +126,34 @@
 
         /* Spezifische Positionierung der Logos */
         .facebook-link {
-            transform: translate(110px, 175px); /* Deutlich größere Verschiebung */
+            transform: translate(110px, 280px); /* Nach unten verschoben */
         }
 
         .twitter-link {
             justify-self: start; /* An den linken Rand der Zelle */
             align-self: start; /* An den oberen Rand der Zelle */
-            transform: translate(50px, -330px); /* Noch weiter nach oben */
+            transform: translate(50px, -220px); /* Weniger weit nach oben */
         }
 
         .instagram-link {
-            transform: translateY(220px); /* Deutlich weiter nach unten verschieben */
+            transform: translateY(100px) translateX(0) !important; /* Weniger weit nach unten, horizontal zentriert */
+            grid-column: 1 / -1 !important; /* Über die gesamte Breite des Grids */
+            justify-self: center !important; /* Horizontale Zentrierung innerhalb der Zelle */
         }
 
         .youtube-link {
-            transform: translateY(-330px); /* Auf gleiche Höhe wie Twitter (Standard) */
+            transform: translateY(0px); /* Näher an die Mitte */
             justify-self: end; /* An den rechten Rand der Zelle */
             align-self: start; /* An den oberen Rand der Zelle */
         }
 
         .pinterest-link {
-            transform: translateY(175px); /* Auf gleiche Höhe wie Facebook (Standard) */
+            transform: translateY(280px); /* Nach unten verschoben */
         }
 
         /* Spezifische Styles für das YouTube-Icon */
         .youtube-link .social-icon {
-            transform: scale(1.14) !important; /* 14% größer - !important zur Sicherheit */
+            transform: scale(1.0); /* Zurück zur Normalgröße */
         }
 
         /* Media Query für größere Bildschirme */
@@ -196,30 +201,32 @@
 
             /* Spezifische Positionierung der Logos auf Desktop */
             .facebook-link {
-                transform: translate(120px, 180px); /* Angepasste Werte für Desktop */
+                transform: translate(120px, 290px); /* Angepasste Werte für Desktop */
             }
 
             .twitter-link {
-                transform: translate(60px, -420px); /* Angepasste Werte für Desktop */
+                transform: translate(60px, -310px); /* Angepasste Werte für Desktop */
             }
 
             .instagram-link {
-                transform: translateY(230px); /* Deutlich weiter nach unten verschieben auf Desktop */
+                transform: translateY(110px) translateX(0) !important; /* Angepasste Werte für Desktop */
+                grid-column: 1 / -1 !important; /* Über die gesamte Breite des Grids */
+                justify-self: center !important; /* Horizontale Zentrierung innerhalb der Zelle */
             }
 
             .youtube-link {
-                transform: translateY(-420px); /* Auf gleiche Höhe wie Twitter (Desktop) */
+                transform: translateY(10px); /* Angepasste Werte für Desktop */
                 justify-self: end; /* An den rechten Rand der Zelle */
                 align-self: start; /* An den oberen Rand der Zelle */
             }
 
             .pinterest-link {
-                transform: translateY(180px); /* Auf gleiche Höhe wie Facebook (Desktop) */
+                transform: translateY(290px); /* Angepasste Werte für Desktop */
             }
 
             /* Spezifische Styles für das YouTube-Icon auf Desktop */
             .youtube-link .social-icon {
-                transform: scale(1.14) !important; /* 14% größer - !important zur Sicherheit */
+                transform: scale(1.0) !important; /* Zurück zur Normalgröße */
             }
         }
     </style>
