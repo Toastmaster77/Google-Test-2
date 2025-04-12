@@ -23,11 +23,11 @@
         }
 
         .google-logo {
-            font-size: 4.2em; /* Etwas kleiner für mehr Eleganz */
+            font-size: 4.2em;
             color: #4285f4;
             font-weight: bold;
-            margin-bottom: 30px; /* Mehr Abstand zur Suchleiste */
-            letter-spacing: 0.5px; /* Leichter Buchstabenabstand */
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
         }
 
         .google-logo span:nth-child(2) { color: #ea4335; }
@@ -38,40 +38,40 @@
 
         .search-bar {
             display: flex;
-            border: 1px solid #ddd; /* Hellere, dünnere Border */
-            border-radius: 30px; /* Noch runder */
-            padding: 12px 20px; /* Angepasstes Padding */
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            padding: 12px 20px;
             width: 85%;
             max-width: 550px;
-            margin-bottom: 40px; /* Mehr Abstand zu den Buttons */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtilere, weichere Shadow */
+            margin-bottom: 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
             background-color: white;
             transition: box-shadow 0.3s ease;
         }
 
         .search-bar:focus-within {
-            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2); /* Verstärkter Shadow beim Fokus */
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
         }
 
         .search-bar input[type="text"] {
             flex-grow: 1;
             border: none;
             outline: none;
-            font-size: 17px; /* Etwas kleinere Schrift */
-            color: #333; /* Dunklere Textfarbe */
+            font-size: 17px;
+            color: #333;
         }
 
         .search-buttons {
             display: flex;
-            gap: 12px; /* Etwas weniger Abstand */
+            gap: 12px;
         }
 
         .search-buttons button {
-            background-color: #eee; /* Hellgrauer Hintergrund */
+            background-color: #eee;
             border: 1px solid #eee;
-            color: #444; /* Dunkelgraue Textfarbe */
-            font-size: 15px; /* Kleinere Schrift */
-            padding: 10px 20px; /* Angepasstes Padding */
+            color: #444;
+            font-size: 15px;
+            padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
@@ -84,17 +84,19 @@
         }
 
         .social-icons-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            padding: 60px; /* Erhöhter Abstand vom Rand */
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Kleinere Zellen */
-            grid-template-rows: repeat(auto-fit, minmax(60px, 1fr));
-            padding: 30px; /* Angepasstes Padding */
-            gap: 20px; /* Angepasster Abstand */
-            justify-content: center;
-            align-items: center;
-            width: 95%;
-            max-width: 700px; /* Reduzierte maximale Breite */
-            margin: 0 auto;
-            opacity: 0.7; /* Noch etwas weniger auffällig */
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Gleichmäßige Spalten */
+            grid-template-rows: repeat(auto-fit, minmax(80px, 1fr)); /* Gleichmäßige Reihen */
+            justify-items: center; /* Zentriert die Icons in ihren Zellen */
+            align-items: center; /* Zentriert die Icons in ihren Zellen */
+            gap: 20px; /* Abstand zwischen den Icons */
         }
 
         .social-icon-link {
@@ -107,16 +109,16 @@
         }
 
         .social-icon {
-            max-width: 70%; /* Kleinere Icons */
-            max-height: 70%;
-            opacity: 0.5; /* Noch transparenter */
+            max-width: 60%; /* Angepasste Größe */
+            max-height: 60%; /* Angepasste Größe */
+            opacity: 0.6;
             transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
             transform: scale(1);
         }
 
         .social-icon:hover {
             opacity: 0.9;
-            transform: scale(1.05); /* Subtilerer Zoom */
+            transform: scale(1.05);
         }
 
         /* Media Query für größere Bildschirme */
@@ -151,16 +153,15 @@
             }
 
             .social-icons-container {
-                grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); /* Etwas größere Zellen auf Desktop */
-                grid-template-rows: repeat(auto-fit, minmax(70px, 1fr));
-                padding: 40px;
-                gap: 25px;
-                max-width: 900px;
+                padding: 80px; /* Mehr Abstand auf größeren Bildschirmen */
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Größere Zellen auf Desktop */
+                grid-template-rows: repeat(auto-fit, minmax(100px, 1fr)); /* Größere Zellen auf Desktop */
+                gap: 30px; /* Mehr Abstand auf größeren Bildschirmen */
             }
 
             .social-icon {
-                max-width: 60%; /* Kleinere Icons auf Desktop beibehalten */
-                max-height: 60%;
+                max-width: 50%; /* Angepasste Größe auf Desktop */
+                max-height: 50%; /* Angepasste Größe auf Desktop */
             }
         }
     </style>
