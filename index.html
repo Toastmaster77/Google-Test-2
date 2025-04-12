@@ -90,7 +90,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            padding: 60px; /* Erhöhter Abstand vom Rand */
+            padding: 40px; /* Angepasster Abstand vom Rand */
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Kleinere Zellen */
             grid-template-rows: repeat(auto-fit, minmax(60px, 1fr)); /* Kleinere Zellen */
@@ -119,6 +119,17 @@
         .social-icon:hover {
             opacity: 0.9;
             transform: scale(1.05);
+        }
+
+        /* Spezifische Positionierung der Logos */
+        .facebook-link {
+            transform: translate(10px, 25px); /* 1cm nach rechts (ca. 10px), 2.5cm nach unten (ca. 25px) */
+        }
+
+        .twitter-link {
+            justify-self: start; /* An den linken Rand der Zelle */
+            align-self: start; /* An den oberen Rand der Zelle */
+            transform: translate(10px, 10px); /* Etwas Abstand von der Ecke */
         }
 
         /* Media Query für größere Bildschirme */
@@ -163,6 +174,15 @@
                 max-width: 30%; /* Kleinere Icons auf Desktop */
                 max-height: 30%; /* Kleinere Icons auf Desktop */
             }
+
+            /* Spezifische Positionierung der Logos auf Desktop */
+            .facebook-link {
+                transform: translate(15px, 30px); /* Angepasste Werte für Desktop */
+            }
+
+            .twitter-link {
+                transform: translate(15px, 15px); /* Angepasste Werte für Desktop */
+            }
         }
     </style>
 </head>
@@ -181,8 +201,8 @@
     </div>
 
     <div class="social-icons-container">
-        <a href="https://www.facebook.com/" target="_blank" class="social-icon-link"><img src="facebook.png" alt="Facebook" class="social-icon"></a>
-        <a href="https://twitter.com/" target="_blank" class="social-icon-link"><img src="twitter.png" alt="Twitter" class="social-icon"></a>
+        <a href="https://www.facebook.com/" target="_blank" class="social-icon-link facebook-link"><img src="facebook.png" alt="Facebook" class="social-icon"></a>
+        <a href="https://twitter.com/" target="_blank" class="social-icon-link twitter-link"><img src="twitter.png" alt="Twitter" class="social-icon"></a>
         <a href="https://www.instagram.com/" target="_blank" class="social-icon-link"><img src="Instagram_icon.png" alt="Instagram" class="social-icon"></a>
         <a href="https://www.linkedin.com/" target="_blank" class="social-icon-link"><img src="linkedIn_logo_initials.png" alt="LinkedIn" class="social-icon"></a>
         <a href="https://www.youtube.com/" target="_blank" class="social-icon-link"><img src="youtube.png" alt="YouTube" class="social-icon"></a>
