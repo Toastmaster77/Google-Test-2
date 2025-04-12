@@ -18,8 +18,8 @@
 
         .google-container {
             text-align: center;
-            margin-top: 15vh; /* Prozentualer Abstand zum oberen Rand */
-            margin-bottom: auto; /* Nimmt den restlichen Platz ein und schiebt Icons nach unten */
+            margin-top: 15vh;
+            margin-bottom: auto;
         }
 
         .google-logo {
@@ -74,16 +74,16 @@
         }
 
         .social-icons-container {
-            position: absolute; /* Ermöglicht präzise Platzierung */
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Verhindert Blockieren von Interaktionen */
+            pointer-events: none;
             padding: 20px;
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Beispielhafte 3-Spalten-Struktur */
-            grid-template-rows: repeat(3, 1fr); /* Beispielhafte 3-Zeilen-Struktur */
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
             align-items: center;
             justify-items: center;
         }
@@ -92,7 +92,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 80%; /* Anpassbare Größe */
+            width: 80%;
             height: 80%;
             pointer-events: auto;
         }
@@ -110,14 +110,25 @@
             transform: scale(1.1);
         }
 
-        /* Platzierung der Icons in den Grid-Zellen (Beispielhaft) */
-        .facebook { grid-column: 1; grid-row: 1; } /* Oben links */
-        .twitter { grid-column: 3; grid-row: 1; } /* Oben rechts */
-        .instagram { grid-column: 1; grid-row: 3; } /* Unten links */
-        .linkedin { grid-column: 3; grid-row: 3; } /* Unten rechts */
-        .youtube { grid-column: 2; grid-row: 2; } /* Mitte */
-        .pinterest { grid-column: 1; grid-row: 2; } /* Mitte links */
-        .tiktok { grid-column: 3; grid-row: 2; } /* Mitte rechts */
+        /* Angepasste Größen und Positionen der Icons */
+        .facebook { grid-column: 1; grid-row: 1; }
+        .twitter { grid-column: 3; grid-row: 1; }
+        .pinterest { grid-column: 1; grid-row: 2; /* Nicht so weit oben */ }
+        .instagram { grid-column: 1; grid-row: 3; }
+        .linkedin { grid-column: 3; grid-row: 3; }
+        .youtube { grid-column: 2; grid-row: 1; /* Weiter oben platziert */ }
+        .tiktok { grid-column: 3; grid-row: 2; }
+
+        .facebook .social-icon,
+        .twitter .social-icon,
+        .pinterest .social-icon,
+        .instagram .social-icon {
+            transform: scale(0.8); /* Kleiner */
+        }
+
+        .youtube .social-icon {
+            transform: scale(1.2); /* Größer */
+        }
 
         /* Media Query für größere Bildschirme */
         @media (min-width: 769px) {
@@ -135,18 +146,29 @@
             }
 
             .social-icons-container {
-                grid-template-columns: repeat(5, 1fr); /* Mehr Spalten für mehr Verteilung */
+                grid-template-columns: repeat(5, 1fr);
                 grid-template-rows: repeat(3, 1fr);
             }
 
-            /* Angepasste Platzierung für größere Bildschirme */
+            /* Angepasste Größen und Positionen für größere Bildschirme */
             .facebook { grid-column: 1; grid-row: 1; }
             .twitter { grid-column: 5; grid-row: 1; }
+            .pinterest { grid-column: 2; grid-row: 1; /* Nicht so weit oben */ }
             .instagram { grid-column: 1; grid-row: 3; }
             .linkedin { grid-column: 5; grid-row: 3; }
-            .youtube { grid-column: 3; grid-row: 2; }
-            .pinterest { grid-column: 2; grid-row: 1; }
+            .youtube { grid-column: 3; grid-row: 1; /* Weiter oben platziert */ }
             .tiktok { grid-column: 4; grid-row: 3; }
+
+            .facebook .social-icon,
+            .twitter .social-icon,
+            .pinterest .social-icon,
+            .instagram .social-icon {
+                transform: scale(0.7); /* Etwas kleiner auf Desktop */
+            }
+
+            .youtube .social-icon {
+                transform: scale(1.4); /* Größer auf Desktop */
+            }
 
             .social-icon-link {
                 width: 70%;
