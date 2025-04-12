@@ -13,20 +13,24 @@
             align-items: center;
             min-height: 100vh;
             background-color: #f2f2f2;
-            position: relative;
+            position: relative; /* Wichtig für die absolute Positionierung der Icons innerhalb */
+            padding: 20px; /* Fügt etwas Innenabstand hinzu */
+            box-sizing: border-box; /* Stellt sicher, dass Padding nicht zur Breite beiträgt */
         }
 
         .google-container {
             text-align: center;
-            margin-top: 180px;
-            margin-bottom: 100px;
+            margin-top: max(10vh, 80px); /* Mindest- und relative Abstände */
+            margin-bottom: 60px;
+            width: 90%; /* Passt sich der Bildschirmbreite an */
+            max-width: 600px; /* Maximale Breite */
         }
 
         .google-logo {
-            font-size: 4.2em;
+            font-size: 3.5em; /* Kleinere Schriftgröße für Mobilgeräte */
             color: #4285f4;
             font-weight: bold;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             letter-spacing: 0.5px;
         }
 
@@ -40,13 +44,13 @@
             display: flex;
             border: 1px solid #ddd;
             border-radius: 30px;
-            padding: 12px 20px;
-            width: 85%;
-            max-width: 550px;
-            margin-bottom: 40px;
+            padding: 10px 15px;
+            width: 100%; /* Nimmt die volle Breite des Containers ein */
+            margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
             background-color: white;
             transition: box-shadow 0.3s ease;
+            box-sizing: border-box; /* Stellt sicher, dass Padding nicht zur Breite beiträgt */
         }
 
         .search-bar:focus-within {
@@ -57,24 +61,27 @@
             flex-grow: 1;
             border: none;
             outline: none;
-            font-size: 17px;
+            font-size: 16px;
             color: #333;
         }
 
         .search-buttons {
             display: flex;
-            gap: 12px;
+            gap: 8px;
+            justify-content: center; /* Zentriert die Buttons */
+            width: 100%; /* Nimmt die volle Breite ein */
         }
 
         .search-buttons button {
             background-color: #eee;
             border: 1px solid #eee;
             color: #444;
-            font-size: 15px;
-            padding: 10px 20px;
+            font-size: 14px;
+            padding: 8px 15px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+            box-sizing: border-box; /* Stellt sicher, dass Padding nicht zur Breite beiträgt */
         }
 
         .search-buttons button:hover {
@@ -84,33 +91,30 @@
         }
 
         .social-icons-container {
-            position: absolute;
-            top: 0;
+            position: fixed; /* Icons bleiben beim Scrollen sichtbar (optional) */
+            bottom: 20px; /* Abstand vom unteren Rand */
             left: 0;
             width: 100%;
-            height: 100%;
             pointer-events: none;
-            padding: 40px; /* Angepasster Abstand vom Rand */
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Kleinere Zellen */
-            grid-template-rows: repeat(auto-fit, minmax(60px, 1fr)); /* Kleinere Zellen */
-            justify-items: center; /* Zentriert die Icons in ihren Zellen */
-            align-items: center; /* Zentriert die Icons in ihren Zellen */
-            gap: 15px; /* Kleinerer Abstand zwischen den Icons */
+            padding: 0 20px; /* Horizontales Padding */
+            display: flex;
+            justify-content: space-around; /* Verteilt die Icons gleichmäßig */
+            align-items: center;
+            box-sizing: border-box; /* Stellt sicher, dass Padding nicht zur Breite beiträgt */
         }
 
         .social-icon-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            height: 100%;
+            width: 40px; /* Feste Größe für Icons */
+            height: 40px;
             pointer-events: auto;
         }
 
         .social-icon {
-            max-width: 40%; /* Kleinere Icons */
-            max-height: 40%; /* Kleinere Icons */
+            max-width: 100%; /* Icons nehmen maximal den Platz des Links ein */
+            max-height: 100%;
             opacity: 0.6;
             transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
             transform: scale(1);
@@ -118,44 +122,16 @@
 
         .social-icon:hover {
             opacity: 0.9;
-            transform: scale(1.05);
+            transform: scale(1.1); /* Etwas größere Vergrößerung beim Hover */
         }
 
-        /* Spezifische Positionierung der Logos */
-        .facebook-link {
-            transform: translate(110px, 175px); /* Deutlich größere Verschiebung */
-        }
-
-        .twitter-link {
-            justify-self: start; /* An den linken Rand der Zelle */
-            align-self: start; /* An den oberen Rand der Zelle */
-            transform: translate(50px, -330px); /* Noch weiter nach oben */
-        }
-
-        .instagram-link {
-            transform: translateY(220px); /* Deutlich weiter nach unten verschieben */
-        }
-
-        .youtube-link {
-            transform: translateY(-330px); /* Auf gleiche Höhe wie Twitter (Standard) */
-            justify-self: end; /* An den rechten Rand der Zelle */
-            align-self: start; /* An den oberen Rand der Zelle */
-        }
-
-        .pinterest-link {
-            transform: translateY(175px); /* Auf gleiche Höhe wie Facebook (Standard) */
-        }
-
-        /* Spezifische Styles für das YouTube-Icon */
-        .youtube-link .social-icon {
-            transform: scale(1.14) !important; /* 14% größer - !important zur Sicherheit */
-        }
-
-        /* Media Query für größere Bildschirme */
+        /* Media Query für größere Bildschirme (z.B. Tablets und Desktops) */
         @media (min-width: 769px) {
             .google-container {
                 margin-top: 200px;
                 margin-bottom: 120px;
+                width: 85%;
+                max-width: 700px;
             }
 
             .google-logo {
@@ -164,7 +140,6 @@
             }
 
             .search-bar {
-                max-width: 700px;
                 padding: 14px 25px;
                 margin-bottom: 45px;
             }
@@ -183,43 +158,55 @@
             }
 
             .social-icons-container {
-                padding: 80px; /* Mehr Abstand auf größeren Bildschirmen */
-                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Etwas größere Zellen auf Desktop */
-                grid-template-rows: repeat(auto-fit, minmax(80px, 1fr)); /* Etwas größere Zellen auf Desktop */
-                gap: 20px; /* Kleinerer Abstand auf größeren Bildschirmen */
+                position: absolute; /* Zurück zur absoluten Positionierung für Desktop */
+                top: 0;
+                left: 0;
+                padding: 80px;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+                grid-template-rows: repeat(auto-fit, minmax(60px, 1fr));
+                justify-items: center;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .social-icon-link {
+                width: 100%;
+                height: 100%;
             }
 
             .social-icon {
-                max-width: 30%; /* Kleinere Icons auf Desktop */
-                max-height: 30%; /* Kleinere Icons auf Desktop */
+                max-width: 30%;
+                max-height: 30%;
             }
 
-            /* Spezifische Positionierung der Logos auf Desktop */
+            /* Spezifische Positionierung der Logos auf Desktop (angepasst) */
             .facebook-link {
-                transform: translate(120px, 180px); /* Angepasste Werte für Desktop */
+                transform: translate(120px, 180px);
             }
 
             .twitter-link {
-                transform: translate(60px, -420px); /* Angepasste Werte für Desktop */
+                transform: translate(60px, -420px);
             }
 
             .instagram-link {
-                transform: translateY(230px); /* Deutlich weiter nach unten verschieben auf Desktop */
+                transform: translateY(230px) translateX(0) !important;
+                grid-column: 1 / -1 !important;
+                justify-self: center !important;
             }
 
             .youtube-link {
-                transform: translateY(-420px); /* Auf gleiche Höhe wie Twitter (Desktop) */
-                justify-self: end; /* An den rechten Rand der Zelle */
-                align-self: start; /* An den oberen Rand der Zelle */
+                transform: translateY(-420px);
+                justify-self: end;
+                align-self: start;
             }
 
             .pinterest-link {
-                transform: translateY(180px); /* Auf gleiche Höhe wie Facebook (Desktop) */
+                transform: translateY(180px);
             }
 
-            /* Spezifische Styles für das YouTube-Icon auf Desktop */
             .youtube-link .social-icon {
-                transform: scale(1.14) !important; /* 14% größer - !important zur Sicherheit */
+                transform: scale(1.0) !important; /* Zurück zur Normalgröße auf Desktop */
             }
         }
     </style>
@@ -239,13 +226,13 @@
     </div>
 
     <div class="social-icons-container">
-        <a href="https://www.facebook.com/" target="_blank" class="social-icon-link facebook-link"><img src="facebook.png" alt="Facebook" class="social-icon"></a>
-        <a href="https://twitter.com/" target="_blank" class="social-icon-link twitter-link"><img src="twitter.png" alt="Twitter" class="social-icon"></a>
-        <a href="https://www.instagram.com/" target="_blank" class="social-icon-link instagram-link"><img src="Instagram_icon.png" alt="Instagram" class="social-icon"></a>
+        <a href="https://www.facebook.com/" target="_blank" class="social-icon-link"><img src="facebook.png" alt="Facebook" class="social-icon"></a>
+        <a href="https://twitter.com/" target="_blank" class="social-icon-link"><img src="twitter.png" alt="Twitter" class="social-icon"></a>
+        <a href="https://www.instagram.com/" target="_blank" class="social-icon-link"><img src="Instagram_icon.png" alt="Instagram" class="social-icon"></a>
         <a href="https://www.linkedin.com/" target="_blank" class="social-icon-link"><img src="linkedIn_logo_initials.png" alt="LinkedIn" class="social-icon"></a>
-        <a href="https://www.youtube.com/" target="_blank" class="social-icon-link youtube-link"><img src="youtube.png" alt="YouTube" class="social-icon"></a>
-        <a href="https://www.pinterest.com/" target="_blank" class="social-icon-link pinterest-link"><img src="pinterest.png" alt="Pinterest" class="social-icon"></a>
-        <a href="https://www.tiktok.com/" target="_blank" class="social-icon-link tiktok-link"><img src="tiktok-icon.png" alt="TikTok" class="social-icon"></a>
+        <a href="https://www.youtube.com/" target="_blank" class="social-icon-link"><img src="youtube.png" alt="YouTube" class="social-icon"></a>
+        <a href="https://www.pinterest.com/" target="_blank" class="social-icon-link"><img src="pinterest.png" alt="Pinterest" class="social-icon"></a>
+        <a href="https://www.tiktok.com/" target="_blank" class="social-icon-link"><img src="tiktok-icon.png" alt="TikTok" class="social-icon"></a>
     </div>
 </body>
 </html>
