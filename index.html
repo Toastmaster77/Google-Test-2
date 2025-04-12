@@ -18,14 +18,14 @@
 
         .google-container {
             text-align: center;
-            margin-top: 100px; /* Etwas weniger Abstand zum oberen Rand */
+            margin-top: 80px; /* Weniger Abstand oben auf Mobilgeräten */
         }
 
         .google-logo {
-            font-size: 6em;
+            font-size: 4em; /* Kleineres Logo auf Mobilgeräten */
             color: #4285f4;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .google-logo span:nth-child(2) { color: #ea4335; }
@@ -38,9 +38,10 @@
             display: flex;
             border: 1px solid #ccc;
             border-radius: 25px;
-            padding: 10px 20px;
-            width: 400px;
-            margin-bottom: 30px;
+            padding: 8px 15px; /* Kleinere Padding auf Mobilgeräten */
+            width: 90%; /* Mehr Breite auf Mobilgeräten */
+            max-width: 400px; /* Maximale Breite beibehalten */
+            margin-bottom: 20px; /* Weniger Abstand unten */
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
             background-color: white;
         }
@@ -57,7 +58,7 @@
             border: 1px solid #f8f9fa;
             color: #3c4043;
             font-size: 14px;
-            padding: 10px 20px;
+            padding: 8px 15px; /* Kleinere Padding auf Mobilgeräten */
             margin: 5px;
             border-radius: 4px;
             cursor: pointer;
@@ -81,8 +82,8 @@
         }
 
         .social-icon {
-            width: 48px; /* Größere Icons für bessere Sichtbarkeit */
-            height: 48px;
+            width: 36px; /* Kleinere Icons auf Mobilgeräten */
+            height: 36px;
             opacity: 0.7;
             transition: opacity 0.3s ease-in-out;
         }
@@ -91,7 +92,7 @@
             opacity: 1;
         }
 
-        /* Beispielhafte Positionierung der Icons - MUSS ANGEPASST WERDEN */
+        /* Standard-Positionierung für größere Bildschirme */
         .facebook { top: 50px; left: 50px; }
         .twitter { top: 80px; right: 50px; }
         .instagram { bottom: 100px; left: 150px; }
@@ -99,6 +100,76 @@
         .youtube { top: 150px; right: 200px; }
         .pinterest { top: 200px; left: 250px; }
         .tiktok { bottom: 200px; right: 250px; }
+
+        /* Media Query für kleinere Bildschirme (bis 768px Breite - typische Tablet-Größe) */
+        @media (max-width: 768px) {
+            .google-container {
+                margin-top: 60px;
+            }
+
+            .google-logo {
+                font-size: 3em;
+                margin-bottom: 10px;
+            }
+
+            .search-bar {
+                width: 95%;
+                padding: 6px 12px;
+                margin-bottom: 15px;
+            }
+
+            .search-buttons button {
+                font-size: 12px;
+                padding: 6px 10px;
+                margin: 3px;
+            }
+
+            .social-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            /* Angepasste Positionierung für Mobilgeräte - DIES MUSS VERFEINERT WERDEN */
+            .facebook { top: 20px; left: 20px; }
+            .twitter { top: 20px; right: 20px; }
+            .instagram { bottom: 20px; left: 20px; }
+            .linkedin { bottom: 20px; right: 20px; }
+            .youtube { top: 50%; left: 50%; transform: translate(-50%, -50%); /* Zentriert */ }
+            .pinterest { top: 50px; left: 50%; transform: translateX(-50%); }
+            .tiktok { bottom: 50px; right: 50%; transform: translateX(50%); }
+        }
+
+        /* Media Query für noch kleinere Bildschirme (z.B. Smartphones) */
+        @media (max-width: 480px) {
+            .google-logo {
+                font-size: 2.5em;
+            }
+
+            .search-buttons {
+                display: flex;
+                flex-direction: column; /* Buttons untereinander auf kleinen Smartphones */
+                align-items: center;
+            }
+
+            .search-buttons button {
+                margin: 5px 0;
+                width: 80%;
+            }
+
+            .social-icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            /* Weitere Anpassungen der Icon-Positionierung für sehr kleine Bildschirme */
+            .facebook { top: 10px; left: 10px; }
+            .twitter { top: 10px; right: 10px; }
+            .instagram { bottom: 10px; left: 10px; }
+            .linkedin { bottom: 10px; right: 10px; }
+            .youtube { top: 40%; } /* Anpassung der vertikalen Position */
+            .pinterest { top: 60%; left: 20%; transform: none; }
+            .tiktok { bottom: 40%; right: 20%; transform: none; }
+        }
     </style>
 </head>
 <body>
